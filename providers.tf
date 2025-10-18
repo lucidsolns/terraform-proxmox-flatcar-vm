@@ -12,7 +12,7 @@ terraform {
        */
 
       source  = "bpg/proxmox"
-      version = ">= 0.83.2"
+      version = ">= 0.85.1"
     }
     http = {
       source = "hashicorp/http"
