@@ -1,4 +1,4 @@
-//
+//module
 // see
 //  - https://thenewstack.io/automate-k3s-cluster-installation-on-flatcar-container-linux/
 //
@@ -29,8 +29,13 @@ variable vm_name {
 }
 
 
+variable "configuration_root" {
+  description = "The name of the datastore to store the ignition configuration"
+  type        = string
+}
+
 variable "storage_root" {
-  description = "The name of the datastore to store the root filesystem (and the ignition configuration) for the VM"
+  description = "The name of the datastore to store the root filesystem for the VM"
   type        = string
 }
 
