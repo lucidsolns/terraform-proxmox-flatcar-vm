@@ -1,4 +1,4 @@
-//module
+//
 // see
 //  - https://thenewstack.io/automate-k3s-cluster-installation-on-flatcar-container-linux/
 //
