@@ -94,8 +94,14 @@ variable "storage_images" {
   default     = "local"
 }
 
+variable "configuration_root" {
+  description = "The name of the datastore to store the ignition configuration"
+  type        = string
+  default     = null
+}
+
 variable "storage_root" {
-  description = "The name of the datastore to store the root filesystem (and the ignition configuration) for the VM"
+  description = "The name of the datastore to store the root filesystem for the VM"
   default     = "local"
 }
 
