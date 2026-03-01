@@ -4,7 +4,7 @@
 module "empty" {
   # source = "../.."
   source  = "lucidsolns/flatcar-vm/proxmox"
-  version = "1.0.14"
+  version = "1.0.15"
 
   node_name      = var.node_name
   vm_name        = "empty.local"

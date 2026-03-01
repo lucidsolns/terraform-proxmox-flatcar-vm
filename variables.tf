@@ -163,7 +163,7 @@ variable flatcar_version {
     Linux will automatically upgrade if it is out of date.
 EOT
   type        = string
-  default     = "4459.2.2"
+  default     = "4459.2.3"
 }
 
 variable flatcar_channel {
