@@ -36,10 +36,14 @@ resource "proxmox_virtual_environment_vm" "vm" {
   boot_order = ["virtio0"]
 
   startup {
-    order      = "3"
-    up_delay   = "60"
-    down_delay = "60"
+    // A non-negative number defining the general startup order.
+    order      = "100"
+    // A optional non-negative number defining the delay in seconds before the next VM is started.
+    // up_delay   = "0"
+    // A non-negative number defining the delay in seconds before the next VM is shut down.
+    // down_delay = "0"
   }
+
   operating_system {
     type = "l26"
   }
