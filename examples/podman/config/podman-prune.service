@@ -1,0 +1,10 @@
+[Unit]
+Description=Podman Cleanup (Safe Prune)
+Wants=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/podman system prune -f
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7

@@ -1,0 +1,14 @@
+{
+  "default": [
+    {
+      "type": "reject"
+    }
+  ],
+  "transports": {
+    "docker": {
+      "docker.io/library/nginx": [
+        { "type": "insecureAcceptAnything" }
+      ]
+    }
+  }
+}

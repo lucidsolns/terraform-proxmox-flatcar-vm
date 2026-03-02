@@ -1,0 +1,21 @@
+#  Nginx running as a systemd container
+#
+#  see:
+#   - https://docs.podman.io/en/latest/markdown/podman-systemd.unit.5.html
+#
+[Unit]
+Description=Nginx
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+Image=docker.io/library/nginx:latest
+ContainerName=nginx
+Network=host
+AutoUpdate=registry
+PublishPort=80:80
+PublishPort=443:443
+Pull=always
+
+[Install]
+WantedBy=multi-user.target
