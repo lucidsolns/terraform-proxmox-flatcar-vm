@@ -1,7 +1,7 @@
 # Podman example
 
 This example uses podman to run a container.  The nginx container is used
-as a sample via Quadlet configuration file.
+as a sample via a Quadlet configuration file.
 
 Flatcar Linux supports podman via a sysext. All that is required to provide the sysext
 is to list in the file `/etc/flatcar/enabled-sysext.conf`. Flatcar Linux will
