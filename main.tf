@@ -74,6 +74,7 @@ module "vm" {
     })
 
   storage_root         = var.storage_root
+  configuration_root   = coalesce(var.configuration_root, var.storage_root)
   storage_path_mapping = var.storage_path_mapping
 
   flatcar_image_id = proxmox_virtual_environment_download_file.flatcar_image.id
