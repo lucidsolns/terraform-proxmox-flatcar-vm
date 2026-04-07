@@ -12,7 +12,7 @@ terraform {
        */
 
       source  = "bpg/proxmox"
-      version = ">= 0.97.1"
+      version = ">= 0.100.0"
     }
     /*
         see:
