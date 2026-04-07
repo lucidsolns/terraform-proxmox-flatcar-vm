@@ -90,13 +90,18 @@ EOT
 }
 
 variable "storage_images" {
-  description = "The name of the datastore to use for storing Flatcar images"
-  default     = "local"
+  description = "The name of the datastore to use for storing Flatcar images. This will default to `local`"
+  default     = null
 }
 
 variable "storage_root" {
-  description = "The name of the datastore to store the root filesystem (and the ignition configuration) for the VM"
-  default     = "local"
+  description = "The name of the datastore to store the root filesystem for the VM. This will default to the storage_images storage."
+  default     = null
+}
+
+variable "storage_ignition" {
+  description = "The name of the datastore to store the ignition configuration for the VM. This will default to the storage_root storage."
+  default     = null
 }
 
 /*

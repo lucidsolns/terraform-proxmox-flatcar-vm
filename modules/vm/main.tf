@@ -268,7 +268,7 @@ module "butane_storage_map" {
  */
 resource "proxmox_virtual_environment_file" "flatcar_butane" {
   content_type = "snippets"
-  datastore_id = var.storage_root
+  datastore_id = var.storage_ignition
   node_name    = var.node_name
 
   source_raw {

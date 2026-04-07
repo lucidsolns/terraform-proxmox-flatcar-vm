@@ -15,6 +15,11 @@ locals {
       butane_variables = {}
     }
   ]
+
+  default_storage_name = "local"
+  storage_images = coalesce(var.storage_images, local.default_storage_name)
+  storage_root = coalesce(var.storage_root, var.storage_images, local.default_storage_name)
+  storage_ignition = coalesce(var.storage_ignition, var.storage_root, var.storage_images, local.default_storage_name)
 }
 
 /*
@@ -73,7 +78,8 @@ module "vm" {
       "vm_index" = count.index
     })
 
-  storage_root         = var.storage_root
+  storage_root = local.storage_root
+  storage_ignition = local.storage_ignition
   storage_path_mapping = var.storage_path_mapping
 
   flatcar_image_id = proxmox_virtual_environment_download_file.flatcar_image.id

@@ -54,7 +54,7 @@ locals {
  */
 resource "proxmox_virtual_environment_download_file" "flatcar_image" {
   content_type        = "import"
-  datastore_id        = var.storage_images
+  datastore_id        = local.storage_images
   node_name           = var.node_name
   url                 = local.FLATCAR_OS_IMAGE_URL
   file_name           = "${local.FLATCAR_BASE_FILENAME}-image.qcow2"
@@ -79,7 +79,7 @@ resource "proxmox_virtual_environment_download_file" "flatcar_uefi_vars" {
   count = 0 // disable for now, as UEFI vars are not able to be provisioned
 
   content_type        = "import"
-  datastore_id        = var.storage_images
+  datastore_id        = local.storage_images
   node_name           = var.node_name
   url                 = local.FLATCAR_UEFI_VARS_IMAGE_URL
   file_name           = "${local.FLATCAR_BASE_FILENAME}-uefi_vars.qcow2"
@@ -90,7 +90,7 @@ resource "proxmox_virtual_environment_download_file" "flatcar_uefi_code" {
   count = 0 // disable for now, as UEFI code are not able to be provisioned
 
   content_type        = "import"
-  datastore_id        = var.storage_images
+  datastore_id        = local.storage_images
   node_name           = var.node_name
   url                 = local.FLATCAR_UEFI_CODE_IMAGE_URL
   file_name           = "${local.FLATCAR_BASE_FILENAME}-uefi_code.qcow2"
