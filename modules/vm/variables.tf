@@ -128,7 +128,6 @@ variable network_devices {
     mac_address = optional(string, null)
     queues = optional(number, null)
 
-    enabled = optional(bool, true)
     disconnected = optional(bool, false)
     firewall = optional(bool, false)
   }))

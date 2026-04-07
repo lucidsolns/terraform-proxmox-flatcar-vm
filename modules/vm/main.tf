@@ -92,7 +92,6 @@ resource "proxmox_virtual_environment_vm" "vm" {
       mac_address = nic.value.mac_address
       queues = nic.value.queues
 
-      enabled = nic.value.enabled
       disconnected = nic.value.disconnected
       firewall = nic.value.firewall
     }
