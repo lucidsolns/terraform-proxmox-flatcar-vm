@@ -82,5 +82,5 @@ module "vm" {
   storage_ignition = local.storage_ignition
   storage_path_mapping = var.storage_path_mapping
 
-  flatcar_image_id = proxmox_virtual_environment_download_file.flatcar_image.id
+  flatcar_image_id = proxmox_download_file.flatcar_image.id
 }

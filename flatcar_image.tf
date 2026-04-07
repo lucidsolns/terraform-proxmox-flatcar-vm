@@ -52,7 +52,7 @@ locals {
       - https://github.com/bpg/terraform-provider-proxmox/issues/860
       - https://git.proxmox.com/?p=pve-storage.git;a=blob;f=PVE/API2/Storage/Status.pm;h=b838461db4b6d2076689ab72f861bfa4d9ee7923;hb=refs/heads/master
  */
-resource "proxmox_virtual_environment_download_file" "flatcar_image" {
+resource "proxmox_download_file" "flatcar_image" {
   content_type        = "import"
   datastore_id        = local.storage_images
   node_name           = var.node_name
@@ -75,7 +75,7 @@ module "flatcar_image_digest" {
   algorithm = "SHA512"
 }
 
-resource "proxmox_virtual_environment_download_file" "flatcar_uefi_vars" {
+resource "proxmox_download_file" "flatcar_uefi_vars" {
   count = 0 // disable for now, as UEFI vars are not able to be provisioned
 
   content_type        = "import"
@@ -86,7 +86,7 @@ resource "proxmox_virtual_environment_download_file" "flatcar_uefi_vars" {
   overwrite_unmanaged = true
 }
 
-resource "proxmox_virtual_environment_download_file" "flatcar_uefi_code" {
+resource "proxmox_download_file" "flatcar_uefi_code" {
   count = 0 // disable for now, as UEFI code are not able to be provisioned
 
   content_type        = "import"

@@ -30,7 +30,7 @@ resource "proxmox_virtual_environment_vm" "vm" {
   bios            = "ovmf"
   efi_disk {
     datastore_id = var.storage_root
-    // import_from  = proxmox_virtual_environment_download_file.flatcar_uefi_vars.id
+    // import_from  = proxmox_download_file.flatcar_uefi_vars.id
     type = "4m"
   }
   boot_order = ["virtio0"]
