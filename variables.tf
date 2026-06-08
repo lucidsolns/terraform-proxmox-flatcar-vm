@@ -166,9 +166,12 @@ variable flatcar_version {
   description =<<EOT
     The version of Flatcar Container Linux to provision. The version of Flatcar Container
     Linux will automatically upgrade if it is out of date.
+
+   see:
+      - https://www.flatcar.org/releases#stable-release
 EOT
   type        = string
-  default     = "4459.2.4"
+  default     = "4593.2.2"
 }
 
 variable flatcar_channel {
