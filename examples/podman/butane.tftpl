@@ -75,7 +75,7 @@ storage:
 
 systemd:
   units:
-    # A service run once a week to cleanup dangling containers
+    # A service run once a week to clean up dangling containers
     - name: podman-prune.service
       contents_local: podman-prune.service
 
