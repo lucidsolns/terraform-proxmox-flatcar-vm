@@ -297,3 +297,21 @@ variable "max_network_queues" {
   type = number
   default = 8
 }
+
+variable "boot_disk_size" {
+  description =<<EOF
+   The size of the boot disk in gigabytes. As flatcar grows this seems to be getting larger.
+
+   Recently the base image has grown from ~8.5GB to 12.3GB. When the qcow image is
+   copied into the VM image the following error occurs if the boot disk is too small:
+
+      failed to complete with exit code: shrinking disks is not supported
+    │ task log:
+│        TASK ERROR: shrinking disks is not supported
+
+    To see the size of the qcow image:
+          qemu-img info <image.qcow2>
+EOF
+  default = 14
+  type    = number
+}

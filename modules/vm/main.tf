@@ -149,7 +149,7 @@ locals {
       datastore_id = var.storage_root
       iothread     = true
       discard      = "on"
-      size         = 10
+      size         = var.boot_disk_size
       import_from  = var.flatcar_image_id
       backup       = false
     }

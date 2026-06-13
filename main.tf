@@ -83,4 +83,5 @@ module "vm" {
   storage_path_mapping = var.storage_path_mapping
 
   flatcar_image_id = proxmox_download_file.flatcar_image.id
+  boot_disk_size = var.boot_disk_size
 }

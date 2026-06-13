@@ -50,6 +50,11 @@ variable "vm_index" {
   type    = number
 }
 
+variable "boot_disk_size" {
+  description = "The size of the boot disk in gigabytes. As flatcar grows this seems to be getting larger."
+  type        = number
+}
+
 variable "butane_conf" {
   description = "The name/path of the butane file used to configure the Flatcar VM upon first boot"
   type        = string
