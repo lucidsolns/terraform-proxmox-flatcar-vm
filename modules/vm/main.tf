@@ -235,6 +235,10 @@ resource "proxmox_virtual_environment_vm" "persistent_disk" {
 
   lifecycle {
     prevent_destroy = true
+    ignore_changes = [
+      boot_order,
+      cpu
+    ]
   }
 }
 
